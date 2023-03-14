@@ -1,6 +1,16 @@
 import classNames from 'classnames/bind';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faMagnifyingGlass,
+    faCircleXmark,
+    faSpinner,
+    faCloudArrowUp,
+    faPaperPlane,
+    faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
 import styles from './Header.module.scss';
-import logo from './logo.png';
+import images from '~/assets/images';
 
 const cx = classNames.bind(styles);
 
@@ -8,7 +18,35 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <img className={cx('logo')} src={logo} alt="logo_tiktok"></img>
+                <div className={cx('logo')}>
+                    <img src={images.logo} alt="Tiktok" />
+                </div>
+
+                <div className={cx('search')}>
+                    <input className={cx('search-input')} placeholder="Search accounts and videos" spellCheck={false} />
+                    <button className={cx('search-clear')}>
+                        <FontAwesomeIcon icon={faCircleXmark} />
+                    </button>
+                    <FontAwesomeIcon className={cx('search-loading')} icon={faSpinner} />
+                    <button className={cx('search-btn')}>
+                        <FontAwesomeIcon icon={faMagnifyingGlass} />
+                    </button>
+                </div>
+
+                <div className={cx('actions')}>
+                    <button className={cx('actions-upload')}>
+                        <FontAwesomeIcon icon={faCloudArrowUp} />
+                    </button>
+                    <button className={cx('actions-message')}>
+                        <FontAwesomeIcon icon={faPaperPlane} />
+                    </button>
+                    <button className={cx('actions-mailbox')}>
+                        <FontAwesomeIcon icon={faEnvelope} />
+                    </button>
+                    <button className={cx('actions-user')}>
+                        <FontAwesomeIcon icon={faCircleUser} />
+                    </button>
+                </div>
             </div>
         </header>
     );
