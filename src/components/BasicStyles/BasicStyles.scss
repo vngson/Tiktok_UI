@@ -1,15 +1,18 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;700&display=swap');
 
 :root {
-    --primary-background: #fe2c55;
-    --text-color: #333;
+    --primary-color: rgb(254, 44, 85, 1);
+    --black: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --text-color: rgb(22, 24, 35);
     // Default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --default-layout-horizontal-spacer: 24px;
     //Icon
-    --icon-search-font-size: 1.65rem;
-    --icon-actions-font-size: 2.5rem;
+    --icon-search-font-size: 2.4rem;
+    --icon-actions-font-size: 3.2rem;
 }
 
 * {
@@ -19,15 +22,15 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 10px;
 }
 
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    text-rendering: optimizespeed;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.6rem;
     line-height: 1.5;
+    text-rendering: optimizespeed;
+    color: var(--text-color);
 }
 
 button,
@@ -35,6 +38,7 @@ input,
 [tabindex] {
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 div {
