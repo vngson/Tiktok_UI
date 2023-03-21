@@ -22,6 +22,10 @@
         pointer-events: none;
         opacity: 0.5;
     }
+
+    + * {
+        margin-left: 16px;
+    }
 }
 
 //type
@@ -86,12 +90,15 @@
     }
 }
 
-//font-weight
-.semi {
-    font-weight: 400;
-}
 //----------------------------//
 .left-icon + .title,
 .title + .rightIcon {
     margin-left: 8px;
+}
+
+.left-icon,
+.right-icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
 }

@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
+import { faCircleUser, faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import {
     faMagnifyingGlass,
     faCircleXmark,
@@ -12,14 +12,24 @@ import {
     faPaperPlane,
     faEnvelope,
     faPlus,
+    faEllipsisVertical,
+    faLanguage,
+    faCircleQuestion,
 } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import { Wrapper as WindowWrapper } from '~/components/Window';
+import { Menu, Wrapper as WindowWrapper } from '~/components/Window';
 import AccountItem from '~/components/AccountItem';
+import { hover } from '@testing-library/user-event/dist/hover';
 
 const cx = classNames.bind(styles);
+
+const MENU = [
+    { icon: faLanguage, title: 'Language' },
+    { icon: faCircleQuestion, title: 'Feedback and help', to: '/feadback' },
+    { icon: faKeyboard, title: 'Keyboard shortcuts' },
+];
 
 function Header() {
     const [searchResult, setSearchResult] = useState([]);
@@ -38,7 +48,6 @@ function Header() {
                         <div className={cx('search-suggest')} tabIndex="-1" {...attrs}>
                             <WindowWrapper>
                                 <h4 className={cx('search-suggest-label')}>Accounts</h4>
-                                <AccountItem />
                                 <AccountItem />
                             </WindowWrapper>
                         </div>
@@ -70,6 +79,13 @@ function Header() {
                     <Button primary className={cx('action-login')}>
                         Login
                     </Button>
+
+                    <Menu items={MENU}>
+                        <button className={cx('action-more')}>
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                        </button>
+                    </Menu>
+
                     {/* <button className={cx('actions-upload')}>
                         <FontAwesomeIcon icon={faCloudArrowUp} />
                     </button>
