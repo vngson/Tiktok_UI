@@ -49,7 +49,7 @@
 .search-input {
     flex: 1;
     background: transparent;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     height: 100%;
     line-height: 22px;
     caret-color: var(--primary-color);
@@ -114,43 +114,52 @@
 }
 
 .actions {
-    display: flex;
-    height: 36px;
-    position: relative;
-    align-items: center;
 }
 
-// .actions-upload {
-//     font-size: var(--icon-actions-font-size);
-//     cursor: pointer;
-//     background-color: #fff;
-//     margin-left: 0;
-//     position: relative;
-// }
+.logged-message,
+.logged-mailbox {
+    font-size: var(--icon-actions-font-size);
+    color: var(--icon-color);
+    cursor: pointer;
+    background-color: #fff;
+    margin-left: 16px;
+    position: relative;
+}
 
-// .actions-message,
-// .actions-mailbox {
-//     font-size: var(--icon-actions-font-size);
-//     cursor: pointer;
-//     background-color: #fff;
-//     margin-left: 16px;
-//     position: relative;
-// }
+.header-avatar {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #fff;
+    position: relative;
+}
 
-// .actions-user {
-//     font-size: var(--icon-actions-font-size);
-//     cursor: pointer;
-//     background-color: #fff;
-//     margin-left: 16px;
-//     position: relative;
-// }
+.logged-message,
+.logged-mailbox {
+    + * {
+        margin-left: 16px;
+    }
+    + .header-avatar {
+        margin-left: 24px;
+    }
+}
 
-.action-login {
+.login {
     background-color: var(--primary-color);
     color: #fff;
 }
 
-.action-more {
+.not-login,
+.logged {
+    display: flex;
+    height: 36px;
+    position: relative;
+    align-items: center;
+    min-width: 220px;
+}
+
+.not-login-more {
     font-size: 2rem;
     background-color: transparent;
     padding: 6px 8px;

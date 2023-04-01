@@ -1,18 +1,19 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 :root {
     --primary-color: rgb(254, 44, 85, 1);
     --black: rgb(0, 0, 0);
     --white: rgb(255, 255, 255);
-    --text-color: rgb(22, 24, 35);
+    --text-color: rgb(22, 24, 35, 1);
     // Default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
     --default-layout-horizontal-spacer: 24px;
     //Icon
     --icon-search-font-size: 2.4rem;
-    --icon-actions-font-size: 3.2rem;
+    --icon-actions-font-size: 2.2rem;
+    --icon-color: rgb(22, 24, 35, 1);
 }
 
 * {
@@ -26,7 +27,7 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
@@ -49,10 +50,37 @@ a[href],
 a[to] {
     color: var(--text-color);
     text-decoration: none;
-    opacity: 1;
+
+    &:visited {
+        color: var(--text-color);
+        text-decoration: none;
+    }
 }
 
-Link[to] {
+Link {
     color: var(--text-color);
-    opacity: 1;
+
+    &:visited {
+        color: var(--text-color);
+        text-decoration: none;
+    }
+}
+
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        border-radius: 8px;
+        color: var(--white);
+    }
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow::before {
+        top: -8px;
+    }
+    .tippy-content {
+        padding: 6px 8px;
+    }
 }

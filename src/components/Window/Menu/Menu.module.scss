@@ -1,8 +1,6 @@
 //Menu css
 .menu {
-    min-width: 224px;
-    margin-right: -20px;
-    display: flex;
+    width: 224px;
 
     .item {
         margin-left: 0;
@@ -18,13 +16,45 @@
 .item {
     width: 100%;
     justify-content: flex-start;
-    align-items: center;
     border-radius: 0;
     font-size: 1.6rem;
-    font-weight: lighter;
+    font-weight: 400;
+    line-height: 1.8rem;
     padding: 11px 8px 11px 16px;
     user-select: none;
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
     &:hover {
         background: rgba(22, 24, 35, 0.03);
     }
+}
+
+//Header
+
+.header {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: -8px;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn {
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px 12px;
+    font-size: 1.6rem;
+}
+
+.header-title {
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: 400;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
